@@ -1,6 +1,6 @@
 /* © 2026 Rzgar Saeed — Rawen Group */
-const V="bp-bf0e030b";
-const FILES=["./", "index.html", "exam.html", "manifest.webmanifest", "s.590cabec.css", "k.4881bfc9.js", "d.2c4c5482.js", "a.6fbc1283.js", "e.116270b5.css", "x.510650ab.js", "h.b987dc0c.js", "p.5aaf5dee.js", "icons/apple-touch-icon.png", "icons/favicon-32.png", "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-192.png", "icons/maskable-512.png"];
+const V="bp-561ba6af";
+const FILES=["./", "index.html", "exam.html", "manifest.webmanifest", "s.cbe4f4d6.css", "k.4881bfc9.js", "d.a11543a9.js", "a.b06c1d93.js", "e.116270b5.css", "x.fa957115.js", "h.b987dc0c.js", "p.5aaf5dee.js", "icons/apple-touch-icon.png", "icons/favicon-32.png", "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-192.png", "icons/maskable-512.png"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k.startsWith("bp-")&&k!==V).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 self.addEventListener("fetch",e=>{
