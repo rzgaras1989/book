@@ -1,0 +1,13 @@
+name: keepalive
+# Pings the exam database every 3 days so the free Supabase project never pauses (no secrets: the key below is the public anon key that is already inside the app).
+on:
+  schedule:
+    - cron: "17 5 */3 * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ping
+        run: |
+          curl -fsS -X POST "https://ciooldolbkqfluyeaegr.supabase.co/rest/v1/rpc/qb_keepalive" -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNpb29sZG9sYmtxZmx1eWVhZWdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgxNzcwNTgsImV4cCI6MjA5Mzc1MzA1OH0.4-nEmotcB-PC0jn0zcZEP-Cuew6ZA-p1ByWvy1_LESA" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNpb29sZG9sYmtxZmx1eWVhZWdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgxNzcwNTgsImV4cCI6MjA5Mzc1MzA1OH0.4-nEmotcB-PC0jn0zcZEP-Cuew6ZA-p1ByWvy1_LESA" -H "Content-Type: application/json" -d '{}'
